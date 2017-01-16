@@ -1,0 +1,26 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+#side-content {
+	max-width: 1200px;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#side-content div{
+	margin: 20px;
+	padding: 5px;
+}
+
+#sider {
+	position: fixed;
+	left: 66px;
+	bottom: 200px;
+}
+
+#footer {
+	margin-top:50% !important;
+}
