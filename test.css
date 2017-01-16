@@ -4,10 +4,10 @@
 }
 
 #side-content {
-	max-width: 1200px;
+	max-width: 1000px;
 	text-align: center;
 	margin-left: auto;
-	margin-right: auto;
+	margin-right: 0;
 }
 
 #side-content div{
@@ -17,10 +17,29 @@
 
 #sider {
 	position: fixed;
-	left: 66px;
-	bottom: 200px;
+	left: 60px;
+	top: 400px;
+	min-width: 20em;
+	text-align: center;
+	border:1px #ffc solid;
+	background-color: #fff;
 }
 
 #footer {
 	margin-top:50% !important;
+}
+
+#sider a{
+	text-decoration: none;
+	list-style: none;
+	display: block;
+	padding: 5px;
+}
+
+#sider li{
+	list-style:none;
+}
+#sider li:hover{
+	background-color: #cecece;
+	border:1px #4183c4 solid;
 }
