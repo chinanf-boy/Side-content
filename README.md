@@ -27,4 +27,4 @@
 ```
 - and done ,完成
 
-
+![show](https://github.com/chinanf-boy/Side-content/blob/master/show_pic/show_one.gif)
