@@ -27,6 +27,7 @@
 
 #footer {
 	margin-top:50% !important;
+	margin-bottom:50% !important;
 }
 
 #sider a{
@@ -34,6 +35,10 @@
 	list-style: none;
 	display: block;
 	padding: 5px;
+}
+
+#sider a.active{
+	background-color: #cecece;
 }
 
 #sider li{

@@ -1,6 +1,7 @@
-(function() {   
-	var sideObject = [];
+window.onload = (function() {  
 
+	var sideObject = [];
+	var sideObjectTop = [];
 
 	function getSideContent() {
 	// 总 sideObject 
@@ -14,8 +15,9 @@
 		
 		//side
 		getSider();
+		getSideContentTop();
 	}
-
+	//添加li 函数 
 	function getClassSide(sideContent) {
 		//找出 side前缀的class 
 
@@ -70,15 +72,57 @@
 		}
 
 	}
+	//
+	function getElementTop(element){
+　　　　var actualTop = element.offsetTop;
+　　　　var current = element.offsetParent;
+　　　　while (current){
+　　　　　　actualTop += current.offsetTop;
+　　　　　　current = current.offsetParent;
+　　　　}
+　　　　return actualTop;
+　　}
+	function getSideContentTop() {
+
+		for (var i = 0; i < sideObject.length; i++) {
+
+			sideObjectTop.push(getElementTop(sideObject[i]));
+		}
+	}
 
 	if(getSideContent() == false)
 	{
 		alert('hey use javascript,OK!');
 	}
+   //滚动事件函数 ||
+	function clearActive(all_a) {
+		for (var i = 0; i < sideObject.length; i++) {
+			all_a[i].removeAttribute('class');
+		}
+	}
+	function onscrollEvent() {
+		return (function (body_top) {
+		var active_side = 0;
+		for (var i = 0; i < sideObjectTop.length; i++) {
+			if (body_top >= sideObjectTop[i] && sideObjectTop[i] ){
+				active_side = i;
+			}
+		}
+		//
+		var sider = document.getElementById('sider');
 
-})();
+		clearActive(sider.getElementsByTagName('a'));
 
+		var active_a = sider.getElementsByTagName('a')[active_side];
 
+		active_a.setAttribute('class','active');
+
+	})(document.body.scrollTop);
+	}
+		//window 滚动事件 	
+	window.onscroll = onscrollEvent;
+
+});
 
 
 
