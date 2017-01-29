@@ -41,6 +41,10 @@
 	padding: 5px;
 }
 
+a:hover {
+	cursor: pointer;
+}
+
 #sider a.active{
 	background-color: #cecece;
 }

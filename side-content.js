@@ -1,4 +1,5 @@
-window.onload = (function() {  
+
+var sideContent = function() {  
 
 	var sideObject = [];
 	var sideObjectTop = [];
@@ -57,7 +58,7 @@ window.onload = (function() {
 		var li_number = sideObject.length;
 
 		for (var i = 0; i < li_number; i++) {
-			//init li a Element
+			//init ( li, a ) Element
 			var li_this = document.createElement('li');
 			var li_a_this = document.createElement('a');
 			//get href
@@ -122,9 +123,15 @@ window.onload = (function() {
 		//window 滚动事件 	
 	window.onscroll = onscrollEvent;
 
-});
+};
 
+//set run
+var setSider = function() {
+	window.sideContent();
+};
 
+//run 
+setSider();
 
 
 
