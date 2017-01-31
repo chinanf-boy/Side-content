@@ -1,5 +1,8 @@
+//set run
 
-var sideContent = function() {  
+var setSider = function(){
+	
+	var sideContent = function() {  
 
 	var sideObject = [];
 	var sideObjectTop = [];
@@ -123,11 +126,10 @@ var sideContent = function() {
 		//window 滚动事件 	
 	window.onscroll = onscrollEvent;
 
-};
+	};
 
-//set run
-var setSider = function() {
-	window.sideContent();
+	//
+	sideContent();
 };
 
 //run 
