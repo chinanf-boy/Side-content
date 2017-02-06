@@ -1,5 +1,5 @@
 #Side-Content
-
+V_0.2
 
 ---
 
@@ -16,7 +16,9 @@
 ```
 
 
-- 设置一个主内容 ``side-content``
+- 设置一个主内容 ID
+
+>例如``side-content`` 可是自己设置
 
 ```
 <div id='side-content'>
@@ -25,6 +27,16 @@
 ...
 </div>
 ```
+
+```
+setSider('side-content'); //setSider('主内容ID');
+
+or
+
+setSider(); //默认 side-content
+
+```
+
 - and done ,完成
 
 ![show](https://github.com/chinanf-boy/Side-content/blob/master/show_pic/show_one.gif)

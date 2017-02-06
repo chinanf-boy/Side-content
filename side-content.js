@@ -1,26 +1,40 @@
 //set run
 
-var setSider = function(){
-	
+var setSider = function(get_ID){
+	if (get_ID == undefined) {
+		get_ID = 'side-content';
+		console.log('you change -> ' + get_ID);
+	}
+
 	var sideContent = function() {  
 
 	var sideObject = [];
 	var sideObjectTop = [];
 
-	function getSideContent() {
+
+	function getSideContent( Element_ID ) {
 	// 总 sideObject 
 		//js函数验证
 		if (!document.getElementById) return false;
 		if (!document.body.childElementCount) return false;
 
 		//content
-		var sideContent = document.getElementById('side-content');
+		var sideContent = document.getElementById( Element_ID );
+
+		if (!sideContent){
+			return false;
+		}
 		getClassSide(sideContent);
 		
 		//side
 		getSider();
 		getSideContentTop();
 	}
+	if(getSideContent( get_ID ) == false){
+		// get_ID 传值 Element_ID
+		alert('hey use javascript,OK! or input 有效 主内容 ID！');
+	}
+
 	//添加li 函数 
 	function getClassSide(sideContent) {
 		//找出 side前缀的class 
@@ -48,11 +62,9 @@ var setSider = function(){
 				//不是元素节点
 				continue;
 			}
-		}
-}
+		}}
+	//获得sider
 	function getSider() {
-		//获得sider
-
 		var sider = document.getElementById('sider');
 		CreateLiElementById(sider);
 	}
@@ -92,11 +104,6 @@ var setSider = function(){
 
 			sideObjectTop.push(getElementTop(sideObject[i]));
 		}
-	}
-
-	if(getSideContent() == false)
-	{
-		alert('hey use javascript,OK!');
 	}
    //滚动事件函数 ||
 	function clearActive(all_a) {
