@@ -1,18 +1,29 @@
-//set run
+/*! side-content.js @@version
+ * https://github.com/chinanf-boy/side-content
+ *
+ * Copyright (c) @@year @chinanf-boy
+ * Available under the MIT license
+ */
 
-var setSider = function(get_ID){
+//set run fuc
+(function (){
+	'use stript';
+
+	var setSider = function(get_ID) {
+
 	if (get_ID == undefined) {
 		get_ID = 'side-content';
 		console.log('you change -> ' + get_ID);
 	}
 
-	var sideContent = function() {  
+	var sideObject = [],
+	 	sideObjectTop = [];
+	/*
 
-	var sideObject = [];
-	var sideObjectTop = [];
 
 
-	function getSideContent( Element_ID ) {
+	*/
+	var getSideContent = function( Element_ID ) {
 	// 总 sideObject 
 		//js函数验证
 		if (!document.getElementById) return false;
@@ -29,14 +40,15 @@ var setSider = function(get_ID){
 		//side
 		getSider();
 		getSideContentTop();
-	}
-	if(getSideContent( get_ID ) == false){
-		// get_ID 传值 Element_ID
-		alert('hey use javascript,OK! or input 有效 主内容 ID！');
-	}
+	},
+	//
+		/*
 
+
+
+	*/
 	//添加li 函数 
-	function getClassSide(sideContent) {
+	getClassSide = function(sideContent) {
 		//找出 side前缀的class 
 
 		var sideNumber = sideContent.childNodes.length;
@@ -62,14 +74,24 @@ var setSider = function(get_ID){
 				//不是元素节点
 				continue;
 			}
-		}}
+		}},
+			/*
+
+
+
+	*/
 	//获得sider
-	function getSider() {
+
+	getSider = function() {
 		var sider = document.getElementById('sider');
 		CreateLiElementById(sider);
-	}
+	},
+	/*
 
-	function CreateLiElementById(sider) {
+
+
+	*/
+	CreateLiElementById = function(sider) {
 		var li_number = sideObject.length;
 
 		for (var i = 0; i < li_number; i++) {
@@ -87,9 +109,13 @@ var setSider = function(get_ID){
 			sider.appendChild(li_this);
 		}
 
-	}
-	//
-	function getElementTop(element){
+	},
+	/*
+
+
+
+	*/
+	getElementTop = function(element){
 　　　　var actualTop = element.offsetTop;
 　　　　var current = element.offsetParent;
 　　　　while (current){
@@ -97,21 +123,36 @@ var setSider = function(get_ID){
 　　　　　　current = current.offsetParent;
 　　　　}
 　　　　return actualTop;
-　　}
-	function getSideContentTop() {
+　　},
+	/*
+
+
+
+	*/
+	getSideContentTop = function() {
 
 		for (var i = 0; i < sideObject.length; i++) {
 
 			sideObjectTop.push(getElementTop(sideObject[i]));
 		}
-	}
+	},
+		/*
+
+
+
+	*/
    //滚动事件函数 ||
-	function clearActive(all_a) {
+	clearActive = function(all_a) {
 		for (var i = 0; i < sideObject.length; i++) {
 			all_a[i].removeAttribute('class');
 		}
-	}
-	function onscrollEvent() {
+	},
+	/*
+
+
+
+	*/
+	onscrollEvent = function() {
 		return (function (body_top) {
 		var active_side = 0;
 		for (var i = 0; i < sideObjectTop.length; i++) {
@@ -129,22 +170,44 @@ var setSider = function(get_ID){
 		active_a.setAttribute('class','active');
 
 	})(document.body.scrollTop);
-	}
-		//window 滚动事件 	
-	window.onscroll = onscrollEvent;
+	},
+	/*
 
+
+
+	*/
+	sideContent = function( get_ID ){
+		if ( getSideContent( get_ID ) == false ){
+		// get_ID 传值 Element_ID
+		alert('hey use javascript,OK! or input 有效 主内容 ID！');
+		}
+		//
 	};
 
-	//
-	sideContent();
-};
-
-//run 
-setSider();
+	/*
 
 
+	*/
+	sideContent.prototype = {
+		setS : function(argument) {
+			// body...
+			console.log(argument);
+		}
+	}
+	//window 滚动事件 	
+	window.onscroll = onscrollEvent;
 
+	//返回 未完待续
+	return new sideContent( get_ID );
 
+};//setSider ending
+	if (typeof module !== "undefined" && module.exports) {
+    module.exports = setSider;
+  } else {
+    window.setSider = setSider;
+  }
+
+})(window);
 
 
 
