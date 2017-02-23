@@ -9,17 +9,19 @@
 (function (){
 	'use stript';
 
-	var setSider = function(get_ID) {
+	// (Will +) init options
+	var setSider = function( get_ID ) {
 
 	if (get_ID == undefined) {
 		get_ID = 'side-content';
 		console.log('you change -> ' + get_ID);
 	}
 
-	var sideObject = [],
-	 	sideObjectTop = [];
-	/*
+	var sideObject = [],// 标题对象数组
+	 	sideObjectTop = [];// 标题对象的距离数组
 
+	/*
+	0 init ------------------
 
 
 	*/
@@ -35,22 +37,22 @@
 		if (!sideContent){
 			return false;
 		}
-		getClassSide(sideContent);
+		getClassSide(sideContent);// 1
 		
 		//side
-		getSider();
-		getSideContentTop();
+		getSider();// 2
+		getSideContentTop(); // 3
 	},
 	//
 		/*
-
+	1.	------------------
 
 
 	*/
 	//添加li 函数 
 	getClassSide = function(sideContent) {
 		//找出 side前缀的class 
-
+		// 添加到 sideObject
 		var sideNumber = sideContent.childNodes.length;
 		for (var i = 0; i < sideNumber; i++) {
 			if (sideContent.childNodes[i].nodeType == 1)
@@ -75,19 +77,18 @@
 				continue;
 			}
 		}},
-			/*
-
-
+	/*
+	2.	------------------
 
 	*/
 	//获得sider
 
 	getSider = function() {
 		var sider = document.getElementById('sider');
-		CreateLiElementById(sider);
+		CreateLiElementById(sider);//组装sider
 	},
 	/*
-
+	2.1	------------------
 
 
 	*/
@@ -111,21 +112,7 @@
 
 	},
 	/*
-
-
-
-	*/
-	getElementTop = function(element){
-　　　　var actualTop = element.offsetTop;
-　　　　var current = element.offsetParent;
-　　　　while (current){
-　　　　　　actualTop += current.offsetTop;
-　　　　　　current = current.offsetParent;
-　　　　}
-　　　　return actualTop;
-　　},
-	/*
-
+	3	------------------
 
 
 	*/
@@ -136,20 +123,23 @@
 			sideObjectTop.push(getElementTop(sideObject[i]));
 		}
 	},
-		/*
-
+	/*
+	3.1	------------------
 
 
 	*/
-   //滚动事件函数 ||
-	clearActive = function(all_a) {
-		for (var i = 0; i < sideObject.length; i++) {
-			all_a[i].removeAttribute('class');
-		}
-	},
+	//
+	getElementTop = function(element){
+　　　　var actualTop = element.offsetTop;
+　　　　var current = element.offsetParent;
+　　　　while (current){
+　　　　　　actualTop += current.offsetTop;
+　　　　　　current = current.offsetParent;
+　　　　}
+　　　　return actualTop;
+　　},
 	/*
-
-
+	4	------------------
 
 	*/
 	onscrollEvent = function() {
@@ -163,20 +153,35 @@
 		//
 		var sider = document.getElementById('sider');
 
-		clearActive(sider.getElementsByTagName('a'));
+		var sel_a = sider.getElementsByTagName('a');
 
-		var active_a = sider.getElementsByTagName('a')[active_side];
+		clearActive(sel_a);
+
+		var active_a = sel_a[active_side];
 
 		active_a.setAttribute('class','active');
 
 	})(document.body.scrollTop);
 	},
-	/*
 
+	/*
+	4.1	------------------
+
+
+	*/
+   //remove all a class
+	clearActive = function(all_a) {
+		for (var i = 0; i < sideObject.length; i++) {
+			all_a[i].removeAttribute('class');
+		}
+	},
+	/*
+	000000	------------------
 
 
 	*/
 	sideContent = function( get_ID ){
+		// 0 init 
 		if ( getSideContent( get_ID ) == false ){
 		// get_ID 传值 Element_ID
 		alert('hey use javascript,OK! or input 有效 主内容 ID！');
@@ -194,6 +199,7 @@
 			console.log(argument);
 		}
 	}
+
 	//window 滚动事件 	
 	window.onscroll = onscrollEvent;
 
