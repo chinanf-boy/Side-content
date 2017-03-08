@@ -2,7 +2,7 @@
  * https://github.com/chinanf-boy/side-content
  *
  * Copyright (c) @@year @chinanf-boy
- * Available under the MIT license
+ *
  */
 
 //set run fuc
@@ -26,7 +26,7 @@
 
 	*/
 	var getSideContent = function( Element_ID ) {
-	// 总 sideObject 
+	// 总 sideObject
 		//js函数验证
 		if (!document.getElementById) return false;
 		if (!document.body.childElementCount) return false;
@@ -38,7 +38,7 @@
 			return false;
 		}
 		getClassSide(sideContent);// 1
-		
+
 		//side
 		getSider();// 2
 		getSideContentTop(); // 3
@@ -49,9 +49,9 @@
 
 
 	*/
-	//添加li 函数 
+	//添加li 函数
 	getClassSide = function(sideContent) {
-		//找出 side前缀的class 
+		//找出 side前缀的class
 		// 添加到 sideObject
 		var sideNumber = sideContent.childNodes.length;
 		for (var i = 0; i < sideNumber; i++) {
@@ -128,16 +128,15 @@
 
 
 	*/
-	//
 	getElementTop = function(element){
-　　　　var actualTop = element.offsetTop;
-　　　　var current = element.offsetParent;
-　　　　while (current){
-　　　　　　actualTop += current.offsetTop;
-　　　　　　current = current.offsetParent;
-　　　　}
-　　　　return actualTop;
-　　},
+		var actualTop = element.offsetTop;
+		var current = element.offsetParent;
+		while (current) {
+			actualTop += current.offsetTop;
+			current = current.offsetParent;
+		}
+		return actualTop;
+	},
 	/*
 	4	------------------
 
@@ -181,7 +180,7 @@
 
 	*/
 	sideContent = function( get_ID ){
-		// 0 init 
+		// 0 init
 		if ( getSideContent( get_ID ) == false ){
 		// get_ID 传值 Element_ID
 		alert('hey use javascript,OK! or input 有效 主内容 ID！');
@@ -198,9 +197,8 @@
 			// body...
 			console.log(argument);
 		}
-	}
-
-	//window 滚动事件 	
+	};
+	//window 滚动事件
 	window.onscroll = onscrollEvent;
 
 	//返回 未完待续
@@ -214,9 +212,3 @@
   }
 
 })(window);
-
-
-
-
-
-
