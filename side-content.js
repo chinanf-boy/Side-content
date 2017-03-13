@@ -197,12 +197,7 @@
 			// body...
 			console.log(argument);
 		}
-<<<<<<< HEAD
 	};
-=======
-	}
-
->>>>>>> master
 	//window 滚动事件
 	window.onscroll = onscrollEvent;
 
@@ -210,19 +205,10 @@
 	return new sideContent( get_ID );
 
 };//setSider ending
-<<<<<<< HEAD
 	if (typeof window!== "undefined") {
 		window.setSider = setSider;
   } else {
 		module.exports = setSider;
-=======
-	if (typeof window !== "undefined") {
-		window.setSider = setSider;
-		
-  } else {
-		module.exports = setSider;
-
->>>>>>> master
   }
 
 })(window);
