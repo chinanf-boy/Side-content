@@ -94,7 +94,7 @@
 	*/
 	CreateLiElementById = function(sider) {
 		var li_number = sideObject.length;
-
+		var add_div = document.createElement('div');
 		for (var i = 0; i < li_number; i++) {
 			//init ( li, a ) Element
 			var li_this = document.createElement('li');
@@ -107,9 +107,9 @@
 			//a->li
 			li_this.appendChild(li_a_this);
 			//li->sider
-			sider.appendChild(li_this);
+			add_div.appendChild(li_this);
 		}
-
+		sider.appendChild(add_div);
 	},
 	/*
 	3	------------------
@@ -117,9 +117,8 @@
 
 	*/
 	getSideContentTop = function() {
-
 		for (var i = 0; i < sideObject.length; i++) {
-
+			console.log(sideObject[i]);
 			sideObjectTop.push(getElementTop(sideObject[i]));
 		}
 	},
@@ -131,10 +130,11 @@
 	getElementTop = function(element){
 		var actualTop = element.offsetTop;
 		var current = element.offsetParent;
-		while (current) {
+		while (current && current.tagName !== "BODY") {
 			actualTop += current.offsetTop;
 			current = current.offsetParent;
 		}
+
 		return actualTop;
 	},
 	/*
