@@ -205,10 +205,10 @@
 	return new sideContent( get_ID );
 
 };//setSider ending
-	if (typeof module !== "undefined" && module.exports) {
-    module.exports = setSider;
+	if (typeof window!== "undefined") {
+		window.setSider = setSider;
   } else {
-    window.setSider = setSider;
+		module.exports = setSider;
   }
 
 })(window);
