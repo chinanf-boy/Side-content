@@ -1,0 +1,23 @@
+{
+  "name": "Side-content",
+  "version": "1.0.0",
+  "description": "V_0.2",
+  "main": "side-content.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chinanf-boy/Side-content.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chinanf-boy/Side-content/issues"
+  },
+  "homepage": "https://github.com/chinanf-boy/Side-content#readme",
+  "devDependencies": {
+    "webpack": "^2.2.1"
+  }
+}
