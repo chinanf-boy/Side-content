@@ -48,4 +48,4 @@ var a = setSider(); //默认 side-content
 
 > tips: 视口的变化，会，影响准确性，主要是 高度，
 
-![show](https://github.com/chinanf-boy/Side-content/blob/master/show_pic/show_one.gif)
+![show](https://github.com/chinanf-boy/Side-content/blob/master/show_pic/show_one.gif?raw=true)
