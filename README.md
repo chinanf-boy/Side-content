@@ -10,7 +10,6 @@ V_0.2
 - 添加 ``js``文件 ``side-content.js``
 
 ```
-...
 <script src='side-content.js'></script>
 </body>
 ```
@@ -33,14 +32,13 @@ V_0.2
 	<div id="side-1">你</div>
 	<div id="side-2">是</div>
 	//你想添加的标题 -- 前缀必须是 side-
-	...
 </div>
 ```
 
 ```
 var a = setSider('side-content'); //setSider('主内容ID');
 
-or
+//or
 
 var a = setSider(); //默认 side-content
 

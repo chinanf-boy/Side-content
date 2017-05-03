@@ -1,40 +1,108 @@
 <!DOCTYPE html>
 <html lang="zh">
+
 <head>
 	<meta charset="UTF-8">
 	<title>test-side-content</title>
 	<link rel="stylesheet" type="text/css" href="test.css">
 </head>
+
 <body>
 
-<section><div>
-	<ul id='sider'>
+	<section>
+		<div>
+			<ul id='sider'>
 
-	</ul>
-</div></section>
+			</ul>
+		</div>
+	</section>
 
-<article><div id='side-content'>
-	<div class="content-1"><div id="side-1">你</div><div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div></div>
-	<div class="content-2"><div id="side-2">好</div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-	<div class="content-3"><div id="side-3">啊<div>ddd</div></div></div>
-	<div class="content-4"><div id="side-4">朋</div></div>
-	<div class="content-5"><div id="side-5">友</div></div>	
-	<div id="footer">d</div>
+	<article>
+		<div id='side-content'>
+			<div class="content-1">
+				<div id="side-1">你</div>
+				<div>
 
-</div></article>
+					<h1>Side-Content</h1>
 
-<!-- -->
+<p>V_0.2</p>
+
+<hr/>
+
+<h2>简单,以标题链接侧边</h2>
+
+<h2>how-to-use</h2>
+
+<ul><li>添加 <code>js</code>文件 <code>side-content.js</code></li></ul>
+
+<pre><code>
+&lt;script src=&#39;side-content.js&#39;&gt;&lt;/script&gt;
+&lt;/body&gt;
+</code></pre>
+
+<h2>设置一个 <code>sider ID</code> 用来显示标题</h2>
+
+<pre><code>
+&lt;ul id=&#39;sider&#39;&gt;
+&lt;/ul&gt;
+</code></pre>
+
+<h2>设置一个主内容 ID</h2>
+
+<blockquote><p>例如<code>side-content</code> 可是自己设置</p></blockquote>
+
+<pre><code>
+&lt;div id=&#39;side-content&#39;&gt;
+	&lt;div id=&quot;side-1&quot;&gt;你&lt;/div&gt;
+	&lt;div id=&quot;side-2&quot;&gt;是&lt;/div&gt;
+	//你想添加的标题 -- 前缀必须是 side-
+&lt;/div&gt;
+</code></pre>
+
+<pre><code>
+var a = setSider(&#39;side-content&#39;); //setSider(&#39;主内容ID&#39;);
+//or
+var a = setSider(); //默认 side-content
+</code></pre>
+
+<h2>and done ,完成</h2>
+
+<blockquote><p>tips: 视口的变化，会，影响准确性，主要是 高度，</p></blockquote>
+
+<p><img alt="show" src="https://github.com/chinanf-boy/Side-content/blob/master/show_pic/show_one.gif"/></p>
+
+
+
+
+
+				</div>
+			</div>
+			<div class="content-2">
+				<div id="side-2">好</div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+				magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+				Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+				occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+			<div class="content-3">
+				<div id="side-3">啊</div>
+				<div>ddd</div>
+			</div>
+			<div class="content-4">
+				<div id="side-4">朋</div>
+			</div>
+			<div class="content-5">
+				<div id="side-5">友</div>
+			</div>
+			<div id="footer">d</div>
+
+		</div>
+	</article>
+
+	<!-- -->
 	<h1>test</h1>
 	<script src='side-content.js'></script>
+	<script>
+		var Sider = setSider();
+	</script>
 </body>
+
 </html>

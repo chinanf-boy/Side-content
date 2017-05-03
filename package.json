@@ -1,0 +1,32 @@
+{
+  "name": "Side-content",
+  "version": "1.0.0",
+  "description": "V_0.2",
+  "main": "side-content.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "bow": "browser-sync start --server --index test.html --files 'test.html, *.js'",
+    "build": "./node_modules/.bin/webpack --config webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chinanf-boy/Side-content.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chinanf-boy/Side-content/issues"
+  },
+  "homepage": "https://github.com/chinanf-boy/Side-content#readme",
+  "devDependencies": {
+    "babel-core": "^6.24.0",
+    "babel-loader": "^6.4.0",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "babel-preset-es2015": "^6.24.0",
+    "css-loader": "^0.27.2",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "style-loader": "^0.13.2",
+    "webpack": "^2.2.1"
+  }
+}
