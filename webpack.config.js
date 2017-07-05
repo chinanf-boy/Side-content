@@ -5,7 +5,7 @@ const webpack = require('webpack');
 module.exports = {
   entry: './side-content.js',
   output: {
-    filename: 'bundle.js',
+    filename: 'side-content.min.js',
     path: path.resolve(__dirname, 'dist')
   },
   module: {
@@ -30,6 +30,11 @@ module.exports = {
      ]
    },
     plugins: [
-        new ExtractTextPlugin('styles.css')
+        new ExtractTextPlugin('styles.css'),
+        new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false
+      }
+    })
     ]
 };
