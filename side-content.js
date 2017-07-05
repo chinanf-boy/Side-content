@@ -8,10 +8,10 @@
 //set run fuc
 (function () {
 	'use stript';
+	var _throttle = require('lodash/throttle')
 
 	// (Will +) init options
 	var setSider = function (get_ID) {
-
 		if (get_ID == undefined) {
 			get_ID = 'side-content';
 			console.log('you change -> ' + get_ID);
@@ -44,7 +44,7 @@
 				getSideContentTop(); // 3
 				//window 滚动事件
 				if (get_ID && sideObjectTop.length !== 0) {
-					window.onscroll = onscrollEvent;
+					window.onscroll = _throttle(onscrollEvent,16);
 				};
 
 			},
@@ -155,7 +155,6 @@
 						}
 						//
 						var sider = document.getElementById('sider');
-
 						var sel_a = sider.getElementsByTagName('a');
 
 						clearActive(sel_a);

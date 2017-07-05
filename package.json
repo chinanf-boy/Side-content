@@ -1,12 +1,12 @@
 {
   "name": "Side-content",
   "version": "1.0.0",
-  "description": "V_0.2",
+  "description": "V_0.3",
   "main": "side-content.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "bow": "browser-sync start --server --index test.html --files 'test.html, *.js'",
-    "build": "./node_modules/.bin/webpack --config webpack.config.js"
+    "build": "./node_modules/.bin/webpack --config webpack.config.js --optimize-minimize"
   },
   "repository": {
     "type": "git",
@@ -28,5 +28,8 @@
     "extract-text-webpack-plugin": "^2.1.0",
     "style-loader": "^0.13.2",
     "webpack": "^2.2.1"
+  },
+  "dependencies": {
+    "lodash": "^4.17.4"
   }
 }
