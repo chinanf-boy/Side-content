@@ -145,8 +145,9 @@
 
 			*/
 			onscrollEvent = function () {
-				return (function (body_top) {
+				return (function (body_getPagearea) {
 					try {
+						let body_top = body_getPagearea()
 						var active_side = 0;
 						for (var i = 0; i < sideObjectTop.length; i++) {
 							if (body_top >= sideObjectTop[i] && sideObjectTop[i]) {
@@ -167,9 +168,19 @@
 					} catch (error) {
 						console.log(error);
 					};
-				})(document.body.scrollTop);
+				})(get_scrollTop_of_body);
+				　　function get_scrollTop_of_body() {
+					var scrollTop;
+					if (typeof window.pageYOffset != 'undefined') { //pageYOffset指的是滚动条顶部到网页顶部的距离
+						scrollTop = window.pageYOffset;
+					} else if (typeof document.compatMode != 'undefined' && document.compatMode != 'BackCompat') {
+						scrollTop = document.documentElement.scrollTop;
+					} else if (typeof document.body != 'undefined') {
+						scrollTop = document.body.scrollTop;
+					}
+					return scrollTop;
+				}
 			},
-
 			/*
 			4.1	------------------
 

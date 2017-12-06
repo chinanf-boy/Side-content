@@ -66,10 +66,11 @@ pre {
 	-moz-border-radius: 0.4em;
 	-webkit-border-radius: 0.4em;
 	overflow-x: hidden;
+	text-align: left;
 }
 
 pre code {
-	font-size: 10pt;
+	font-size: 15pt;
 }
 
 .thumb { 
