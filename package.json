@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "bow": "browser-sync start --server --index test.html --files 'test.html, *.js'",
-    "build": "webpack --config webpack.config.js --optimize-minimize -w"
+    "build": "webpack --config webpack.config.js --optimize-minimize -w",
+    "AddHexoFolder": "cp -R -f test.css test.html dist ../new_hexo_blog/source/example/side-content/ "
   },
   "repository": {
     "type": "git",
