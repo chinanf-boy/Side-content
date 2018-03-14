@@ -5,9 +5,10 @@
   "main": "side-content.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "bow": "browser-sync start --server --index test.html --files 'test.html, *.js'",
+    "size": "gzip-size dist/side-content.min.js",
+    "bow": "browser-sync start --server --index demo/index.html --files 'demo/index.html, *.js'",
     "build": "webpack --config webpack.config.js --optimize-minimize -w",
-    "AddHexoFolder": "cp -R -f test.css test.html dist ../new_hexo_blog/source/example/side-content/ "
+    "AddHexoFolder": "cp -R -f demo/index.html dist ../new_hexo_blog/source/example/side-content/ "
   },
   "repository": {
     "type": "git",
@@ -27,6 +28,7 @@
     "babel-preset-es2015": "^6.24.0",
     "css-loader": "^0.27.2",
     "extract-text-webpack-plugin": "^2.1.0",
+    "gzip-size-cli": "^2.1.0",
     "style-loader": "^0.13.2",
     "webpack": "^2.2.1"
   },
