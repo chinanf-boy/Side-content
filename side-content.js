@@ -17,9 +17,7 @@
 			console.log('you change -> ' + get_ID);
 		}
 
-		var sideObject = [], // 标题对象数组
-			sideObjectTop = []; // 标题对象的距离数组
-
+		var sideObject = [] // 标题对象数组
 		/*
 		0 init ------------------
 
@@ -45,6 +43,8 @@
 				//window 滚动事件
 				if (get_ID && sideObjectTop.length !== 0) {
 					window.onscroll = _throttle(onscrollEvent,16);
+					window.onresize = _throttle(getSideContentTop,200);
+
 				};
 
 			},
@@ -120,10 +120,11 @@
 
 			*/
 			getSideContentTop = function () {
+				sideObjectTop = []; // 标题对象的距离数组
 				for (var i = 0; i < sideObject.length; i++) {
-					console.log(sideObject[i]);
 					sideObjectTop.push(getElementTop(sideObject[i]));
 				}
+				console.log(sideObjectTop.length, 'change', sideObjectTop)
 			},
 			/*
 			3.1	------------------
@@ -169,6 +170,7 @@
 						console.log(error);
 					};
 				})(get_scrollTop_of_body);
+
 				　　function get_scrollTop_of_body() {
 					var scrollTop;
 					if (typeof window.pageYOffset != 'undefined') { //pageYOffset指的是滚动条顶部到网页顶部的距离
